@@ -20,4 +20,6 @@ sed -i 's/profile\.campuses?.name/profile.campuses?.[0]?.name/g' 'src/app/profil
 sed -i 's/request\.campuses?.name/request.campuses?.[0]?.name/g' 'src/app/verify/page.tsx'
 sed -i 's/purpose: "any maskable"/purpose: "any"/g' src/app/manifest.ts
 
-npm install
+if [ "${PEERLINK_SKIP_INSTALL:-0}" != "1" ]; then
+  npm install
+fi
